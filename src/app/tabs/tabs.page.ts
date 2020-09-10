@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { RouteConfigLoadEnd, Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+
+import { SobrePage } from '../sobre/sobre.page';
+import { FeedPage  } from '../feed/feed.page';
+import { ConfiguracoesPage  } from '../configuracoes/configuracoes.page'; 
 
 @Component({
   selector: 'app-tabs',
@@ -8,11 +12,16 @@ import { RouteConfigLoadEnd, Router } from '@angular/router';
 })
 export class TabsPage {
 
+  tab1 = SobrePage;
+  tab4 = FeedPage ;
+  tab5 = ConfiguracoesPage ;
+
   constructor(
     private router : Router
   ) {}
 
-  goIntroPage(){
-    this.router.navigate(['/'])
+
+  click(page : string){
+    this.router.navigate(['/'+page]);
   }
 }

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { SobrePage } from '../sobre/sobre.page';
+import { PerfilPage } from '../perfil/perfil.page';
+import { ConfiguracoesPage } from '../configuracoes/configuracoes.page';
 
 const routes: Routes = [
   {
@@ -54,6 +57,11 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'configuracoes', component : ConfiguracoesPage},
+  { path: 'sobre', component: SobrePage },
+  { path: 'perfil', component: PerfilPage },
+
+
   {
     path: '',
     redirectTo: 'tabs/tab1',

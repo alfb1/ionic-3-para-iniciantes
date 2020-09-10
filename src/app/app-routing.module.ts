@@ -3,19 +3,19 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m=>m.TabsPageModule),
   },
-  { 
-    path: '', 
-    loadChildren: () => import('./intro/intro.module').then(m=>m.IntroPageModule) 
-   } ,
+  { path: 'configuracoes', loadChildren: './configuracoes/configuracoes.module#ConfiguracoesPageModule' },
+  { path: 'sobre' , loadChildren: './sobre/sobre.module#SobrePageModule' },
+  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
+  { path: 'feed'  , loadChildren: './feed/feed.module#FeedPageModule' },
  ];
 
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, enableTracing : true })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, /*enableTracing : true*/ })
   ],
   exports: [RouterModule]
 })
