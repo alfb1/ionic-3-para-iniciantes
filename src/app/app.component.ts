@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { MovieService } from './providers/movie.service';
+
+import { ConfigService } from './config/config.service';
+import { ConfigParams } from './config/config.model';
+
+import { Router } from  '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,26 +15,24 @@ import { MovieService } from './providers/movie.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  rootPage : any ;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private provider : MovieService,
+    private service: ConfigService,
+    private router : Router,
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      let config = this.provider.getConfigData();
-      console.log('initialize provier - config : ', config);
-
-      if ( config == null){
-        this.rootPage = 
-        config.setConfigData(false);
+      let cfg : ConfigParams = this.service.getConfig();
+      if ( cfg == null){
+        this.service.setConfig({showSlide:false});
+      }else{
+        this.router.navigateByUrl('/tabed');
       }
-
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

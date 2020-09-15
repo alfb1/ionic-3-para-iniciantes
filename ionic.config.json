@@ -1,5 +1,11 @@
 {
-  "name": "myApp",
-  "integrations": {},
-  "type": "angular"
+  "name": "New Ionic App",
+  "type": "angular",
+  "proxies": [{
+    "path": "/ApiCartola/*",
+    "proxyUrl": "https://api.cartolafc.globo.com"
+}],
+"integrations": {
+  "cordova": {}
+}
 }

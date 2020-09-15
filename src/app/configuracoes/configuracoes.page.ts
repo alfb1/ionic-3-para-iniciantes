@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { PerfilPage } from '../perfil/perfil.page';
+import { SobrePage } from '../sobre/sobre.page';
 
 @Component({
   selector: 'app-configuracoes',
@@ -8,28 +10,21 @@ import { MenuController } from '@ionic/angular';
 })
 export class ConfiguracoesPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  rootPage = PerfilPage;
+  sobrePage = SobrePage;
+
+  constructor(private nav : NavController) { }
 
   ngOnInit() {
   }
 
-
-  openFirst() {
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
+  openPerfil(){;
+    this.nav.navigateRoot('/tabs/perfil');
   }
 
-  openEnd() {
-    this.menu.enable(true, 'end');
-    this.menu.open('end');
+  openSobre(){
+    this.nav.navigateForward('/tabs/sobre')
   }
+  
 
-  openCustom() {
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
-  }
-
-  openMenu() {
-   this.openCustom();
-  }
 }

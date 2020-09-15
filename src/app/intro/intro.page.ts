@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-intro',
@@ -9,15 +7,7 @@ import { Router } from '@angular/router';
 })
 export class IntroPage implements OnInit {
 
-  constructor(
-    public router : Router
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-  }
-
-   goToTabsPages(){
-      this.router.navigate(['/tabs'])
-  }
-
+  ngOnInit() {  }
 }

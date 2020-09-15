@@ -76,6 +76,7 @@
           "options": {
             "browserTarget": "app:build"
           },
+          "proxyConfig": "proxy.conf.json",
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"

@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FeedPage } from './feed.page';
+import { FeedPageRoutingModule } from './feed-routing.module';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: FeedPage
-  }
-];
+import { FeedPage } from './feed.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    FeedPageRoutingModule
   ],
   declarations: [FeedPage]
 })

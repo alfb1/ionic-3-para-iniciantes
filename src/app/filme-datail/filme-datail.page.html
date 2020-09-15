@@ -1,0 +1,23 @@
+<ion-header>
+
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>filmeDatail</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="filme">
+    <img src="{{filmeImgUrl}}{{filmeImgBackDrop}}/{{filme.backdrop_path}}" alt="{{filme.backdrop_path}}">
+    <ion-card-header>      
+      <ion-card-subtitle>{{filme.title}}</ion-card-subtitle>
+      <ion-card-title>{{filme.original_title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{filme.overview}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

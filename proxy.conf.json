@@ -1,0 +1,9 @@
+{
+    "/ApiCartola/*": {
+      "target": "https://api.cartolafc.globo.com",
+      "changeOrigin": true,
+      "secure": true,
+      "logLevel": "debug",
+      "pathRewrite": {"^/ApiCartola" : ""}
+    }
+}
